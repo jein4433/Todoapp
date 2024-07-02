@@ -1,0 +1,44 @@
+body {
+    margin:0px;
+    background-image: url("images/sunset-background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    background-color: aliceblue;
+    height: 100vh;
+    opacity:0.8;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.tabs{
+    display:flex;
+    border-bottom:1px solid grey;
+    position:relative;
+}
+
+.tabs div{
+    padding:1em;
+}
+
+.task-area{
+    border:1px solid grey;
+    margin-top:2em;
+}
+
+#underline{
+    height:4px;
+    background-color:steelblue;
+    position:absolute;
+    width:80px;
+    left:0px;
+    top:52px;
+    padding:0px;
+}
+
+.task{
+    display:flex;
+    justify-content: space-between;
+    padding:1em;
+}
