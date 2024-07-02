@@ -1,35 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class = "container">
-        <h1>To-do List</h1>
-        <section class="input-area">
-            <input type="text" id="task-input"/>
-            <button id="add-button">추가</button>
-        </section>
+// 유저는 할일을 추가할 수 있다.
+// 각 할일에 삭제와 체크버튼이 있다.
+// 삭제버튼을 클릭하면 할일이 리스트에서 삭제된다.
+// 체크버튼을 누르면 할일이 끝난것으로 간주하고 밑줄이간다.
+// 끝난 할일은 되돌리기 버튼을 클릭하면 다시 되돌릴 수 있다.
+// 탭을 이용해 아이템들을 상태별로 나누어서 볼 수 있다.
+// 모바일 버전에서도 확인할 수 있는 반응형 웹이다
 
-        <section class="task-area">
-            <div class="tabs">
-                <div id="underline"></div>
+let taskInput = document.getElementById("task-input");
+let addButton = document.getElementById("add-button");
+let taskList = []
+addButton.addEventListener("click", addTask);
+
+function addTask(){
+    let taskContent = taskInput.value;
+    if (taskInput.value != ''){
+    taskList.push(taskContent);
+    }
+    console.log(taskList);
+    addList();
+}
+
+function addList(){
+    let resultHTML=``;
+    for(let i=0;i<taskList.length;i++){
+        resultHTML += `<div class="task">
+                <div>${taskList[i]}</div>
                 <div>
-                    ALL
+                    <button>Check</button>
+                    <button>Delete</button>
                 </div>
-                <div>NOT DONE</div>
-                <div>DONE</div>
-            </div>
-            <div id="task-board">
-            </div>
-        </section>
-    </div>
+            </div>`;
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-</body>
-</html>
+
+
+    document.getElementById("task-board").innerHTML = resultHTML;
+}
+
+addTask();
