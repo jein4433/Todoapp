@@ -8,6 +8,7 @@ body {
 .container{
     background-color: aliceblue;
     height: 100vh;
+    width:60vw;
     opacity:0.8;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
@@ -40,5 +41,70 @@ body {
 .task{
     display:flex;
     justify-content: space-between;
-    padding:1em;
+    border-bottom:1px solid grey;
+    background-color:transparent;
 }
+
+.task-done{
+    text-decoration:line-through;
+    background-color: lightgrey;
+    width: calc(100% - 205px);
+}
+
+.fa-rotate-left{
+    color:dimgrey;
+}
+
+.fa-circle-check{
+    color:forestgreen;
+    size: 200px;
+}
+
+.fa-circle-minus{
+    color:red
+}
+
+.task-button{
+    font-size:20px;
+    width:100px;
+    border:none;
+    background-color: transparent;
+}
+
+.task-button:first-child:hover{
+    background-color:darkseagreen;
+}
+
+.task-button:nth-child(2):hover{
+    background-color:rgb(255, 109, 109);
+
+}
+
+.button-add{
+    font-size:20px;
+    color:coral;
+    border:none;
+    background-color:transparent;
+}
+
+.button-add:hover{
+    color:rgb(212, 91, 47);
+}
+
+input{
+    border-radius:10px;
+    border-color:steelblue;
+    border-width: 3px;
+    text-align: center;
+}
+
+@media screen and (max-width: 620px){
+    .task-button{
+        width:60px;
+    }
+    .task-done{
+        width: calc(100% - 125px);
+    }
+    
+}
+    
