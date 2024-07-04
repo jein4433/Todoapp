@@ -3,13 +3,21 @@ body {
     background-image: url("images/sunset-background.webp");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+h1{
+    color:darkslategray;
+    font-family: "Playfair Display", serif;
+    text-align: center;
 }
 
 .container{
-    background-color: aliceblue;
-    height: 100vh;
+    background-color: rgba(240, 248, 255, 0.734);
+    min-height:100vh;
     width:60vw;
-    opacity:0.8;
+    opacity:0.7;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
@@ -17,25 +25,30 @@ body {
     display:flex;
     border-bottom:1px solid grey;
     position:relative;
+    font-family: "Playfair Display", serif;
 }
 
 .tabs div{
     padding:1em;
+    cursor:pointer;
 }
 
 .task-area{
     border:1px solid grey;
     margin-top:2em;
+    border-radius: 4px;
+    font-family: "Playfair Display", serif;
 }
 
-#underline{
+#under-line{
     height:4px;
     background-color:steelblue;
     position:absolute;
-    width:80px;
+    width:57px;
     left:0px;
     top:52px;
     padding:0px;
+    transition: 1s;
 }
 
 .task{
@@ -49,6 +62,7 @@ body {
     text-decoration:line-through;
     background-color: lightgrey;
     width: calc(100% - 205px);
+    transition:1s;
 }
 
 .fa-rotate-left{
@@ -72,12 +86,22 @@ body {
 }
 
 .task-button:first-child:hover{
-    background-color:darkseagreen;
+    background-color:rgba(49, 205, 49, 0.366);
+    transition:0.7s
 }
 
 .task-button:nth-child(2):hover{
-    background-color:rgb(255, 109, 109);
+    background-color:rgba(252, 43, 43, 0.396);
+    transition:0.7s;
 
+}
+
+.button-bg{
+    margin-left:35vw;
+    border:none;
+    background-color: transparent;
+    font-size:1.1em;
+    font-family: "Playfair Display", serif;
 }
 
 .button-add{
@@ -89,6 +113,19 @@ body {
 
 .button-add:hover{
     color:rgb(212, 91, 47);
+    transition:0.5s;
+}
+
+.all-delete{
+    background-color:transparent;
+    border:none;
+    font-size:20px;
+    color:rgb(50, 50, 50);
+}
+
+.all-delete:hover{
+    color:red;
+    transition:0.7s;
 }
 
 input{
@@ -98,6 +135,13 @@ input{
     text-align: center;
 }
 
+.input-area{
+    position:relative;
+    align-content: center;
+    font-family: "Playfair Display", serif;
+}
+
+
 @media screen and (max-width: 620px){
     .task-button{
         width:60px;
@@ -105,6 +149,18 @@ input{
     .task-done{
         width: calc(100% - 125px);
     }
-    
+    #under-line{
+        top: 78px;
+    }
+    .container{
+        width:300px;
+    }
+    input{
+        width:150px;
+        height:30px;
+    }
+    .all-delete{
+        margin-left:0vw;
+    }
 }
     
